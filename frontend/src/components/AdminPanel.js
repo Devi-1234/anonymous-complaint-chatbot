@@ -8,7 +8,7 @@ const AdminPanel = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const res = await axios.get("https://anonymous-complaint-chatbot.onrender.com/api/complaints/all");
+                const res = await axios.get("http://localhost:5000/api/complaints/all");
                 setComplaints(res.data);
             } catch (error) {
                 console.error("Error fetching complaints", error);

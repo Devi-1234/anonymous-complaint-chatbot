@@ -10,7 +10,7 @@ const Chatbot = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://anonymous-complaint-chatbot.onrender.com/api/complaints/submit", {
+            const res = await axios.post("http://localhost:5000/api/complaints/submit", {
                 category,
                 message
             });
@@ -29,8 +29,9 @@ const Chatbot = () => {
                 <select value={category} onChange={(e) => setCategory(e.target.value)} required>
                     <option value="">Select Category</option>
                     <option value="Harassment">Harassment</option>
-                    <option value="Facilities">Facilities</option>
-                    <option value="Academics">Academics</option>
+                    <option value="Facilities">Physical violence</option>
+                    <option value="Academics">Sexual violence</option>
+                    <option value="Economic">Economical violence</option>
                     <option value="Others">Others</option>
                 </select>
                 <textarea 
